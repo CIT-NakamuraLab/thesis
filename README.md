@@ -16,7 +16,7 @@ brew install mactex-no-gui --cask
 
 ### Windows
 
-http://www.tug.org/texlive/acquire-netinstall.html から`install-tl-windows.exe` をダウンロード。GUIのインストーラに従っていれる
+https://github.com/CIT-NakamuraLab/thesis/tree/main/Windows にまとめてあります。
 
 ### Linux (Ubuntu)
 
