@@ -15,6 +15,8 @@ pdfにはリンクが埋め込まれています。githubのWebサイト上で�
 もしくは、https://github.com/CIT-NakamuraLab/thesis/blob/main/Windows/LaTeX%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89.pdf をクリックしてもらえれば2枚目の画像の画面に飛びます。  
 2枚目の画像の画面になったら、オレンジ枠の『Download』をクリックしてください。成功すると下の赤枠のようにpdfがダウンロードされると思うので、クリックしていただけると、リンクが効いたPDFが表示されます。
 
+#### 画像1
 ![repository.png](./repository.png)
 
+#### 画像2
 ![download_pdf.png](./download_pdf.png)
