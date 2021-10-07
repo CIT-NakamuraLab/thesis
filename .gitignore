@@ -5,6 +5,7 @@
 *.aux
 *.dvi
 *.log
+*.out
 *.fdb_latexmk
 *.fls
 *.gz
