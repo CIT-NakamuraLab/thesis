@@ -3,10 +3,9 @@
 このディレクトリにWindowsでの環境構築方法をまとめます。  
 不明点があれば、
 
-- 21kuroma@nao.net.it-chiba.ac.jp
-- kuroyuki0728@gmail.com
+https://github.com/CIT-NakamuraLab/thesis/issues
 
-のいずれかに連絡をください。
+issueにすると誰かが解決するかもしれません。
 
 ## pdfの利用方法
 
