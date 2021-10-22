@@ -1,12 +1,11 @@
 # Mac用の環境構築
 
 MacでのLaTexの環境構築をまとめました。  
-不明点があれば~~ぐぐれ~~
+不明点があれば、
 
-* 21sakurai@nao.net.it-chiba.ac.jp
-* t.devsaku@gmail.com
+https://github.com/CIT-NakamuraLab/thesis/issues
 
-に連絡をすると返すかもしれないし、返さないかもしれません。
+issueにすると誰かが解決するかもしれません。
 
 ## LaTexインストール
 
