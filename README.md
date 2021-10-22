@@ -5,11 +5,7 @@
 
 ### Mac
 
-かなり重い
-
-```
-brew install mactex-no-gui --cask
-```
+https://github.com/CIT-NakamuraLab/thesis/blob/main/Mac/README.md にまとめました。
 
 ### Windows
 
@@ -17,13 +13,7 @@ https://github.com/CIT-NakamuraLab/thesis/tree/main/Windows にまとめてあ�
 
 ### Linux (Ubuntu)
 
-```
-sudo apt install texlive-full
-```
-
-### VSCode
-
-https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop をインストール
+知らん、自分でやれ
 
 ### Docker
 
