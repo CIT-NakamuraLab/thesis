@@ -40,7 +40,7 @@
             "args": [
                 "-l",
                 "-ot",
-                "-kanji=utf8 -synctex=1",
+                "-kanji=utf8",
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
