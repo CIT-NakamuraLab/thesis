@@ -3,9 +3,6 @@
 
 ## LaTex環境構築
 
-この記事を参考にしています  
-https://qiita.com/rainbartown/items/d7718f12d71e688f3573
-
 ### Mac
 
 かなり重い
