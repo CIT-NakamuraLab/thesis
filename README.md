@@ -11,7 +11,7 @@ https://github.com/CIT-NakamuraLab/thesis/blob/main/Mac/README.md にまとめ�
 
 https://github.com/CIT-NakamuraLab/thesis/tree/main/Windows にまとめてあります。
 
-### Linux (Ubuntu)
+### Linux
 
 知らん、自分でやれ
 
