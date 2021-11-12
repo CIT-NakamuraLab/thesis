@@ -30,10 +30,21 @@
 			"name": "platex ➞ dvips ➞ ps2pdf ",
 			"tools": [
 				"platex",
+                "platex",
+                "platex",
 				"dvips",
 				"ps2pdf",
 			]
 		},
+        {
+            "name": "platex * 3 ➞ dvipdfmx",
+            "tools": [
+                "platex",
+                "platex",
+                "platex",
+                "dvipdfmx"
+            ]
+        },
         {
             "name": "ptex2pdf",
             "tools": [
@@ -53,6 +64,11 @@
                 "-file-line-error",
                 "%DOC%"
             ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": ["%DOC%"]
         },
         // option sample: https://kajindowsxp.com/texworkshop/
         {
