@@ -1,0 +1,40 @@
+%%%%%%%初期設定　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt]{ltjsreport}
+\usepackage{fancyheadings, graphicx}
+\pagestyle{fancy}
+\lhead{ }							%左ヘッダーの書式を調整
+
+\setlength{\headwidth}{38\zw}
+\setlength{\textheight}{25cm}		%1ページ当りの行数を指定する
+\setlength{\textwidth}{38\zw}			%1行あたりの文字数の設定
+
+\setlength{\evensidemargin}{10mm}	%偶数ページの余白
+\setlength{\oddsidemargin}{10mm}	%奇数ページの余白
+
+\setlength{\topmargin}{-18mm}		%上の余白
+\setlength{\headheight}{10mm}		%ヘッダ領域の高さ
+\setlength{\headsep}{5mm}			%ヘッダ領域と本文領域との間隔
+\setlength{\columnsep}{12mm}		%段組にした場合の段同士の間隔
+
+\setlength{\footskip}{10mm}			%フッタ領域と本文との間隔
+
+\appendix						%付録用の書式設定
+%%%%%%%タイトル内容　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{付録}
+\author{}
+\date{}
+%%%%%%%タイトル内容　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%初期設定　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%コンテンツ　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\tableofcontents
+\baselineskip 24pt
+
+%%%%%%%本文　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{main.tex}
+%%%%%%%本文　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+%%%%%%%コンテンツ　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

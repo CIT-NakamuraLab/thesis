@@ -1,0 +1,395 @@
+%---------------------------
+%このファイルはLATEXのサンプルとして作成しています。
+%必要な部分をコピーするなどして使用してください。
+%
+%追加のパッケージを読み込んで使用するものもありますがstyleフォルダを使用するソースと同じ場所にフォルダごとに入れ、
+%おまじない部分を上部にコピーしておけばすべて使用することができます。
+%
+%目次や参考文献の数字は一回ビルドすることで参照ファイルが作られるので、もう一度ビルドすることで正常に表示されます。
+%---------------------------
+
+
+%おまじない-------------------
+\documentclass{jsarticle}					%クラスファイル
+\usepackage{style/eclclass, style/eclbkbox, plext, fancyhdr, style/texilikecover, ascmac, style/moreverb, array}
+\usepackage{graphicx}				%パッケージファイル
+%---------------------------
+
+%ページレイアウトの設定
+\setlength{\topmargin}{0pt}
+\setlength{\textheight}{40\baselineskip}
+\setlength{\textwidth}{50zw}
+\setlength{\headheight}{20pt}
+\setlength{\headsep}{20pt}
+\setlength{\footskip}{20pt}
+
+%表題の情報
+%texilikecover.sty
+\title{LATEX \\ サンプル}	%文書のタイトル
+\subtitle{サブタイトル}							%文書のサブタイトル
+\author{田中太郎 \and 山田花子}				%作成者
+\date{\today}									%日付
+
+%ヘッダー・フッターの設定
+%fancyhdr.sty
+\pagestyle{fancy}
+\lhead{\leftmark}						%ヘッダーの左
+\chead{Headerの真ん中}				%ヘッダーの中央
+\rhead{\rightmark}						%ヘッダーの右
+\lfoot{左下}							%フッターの左
+\cfoot{Fotterの真ん中}					%フッターの中央
+\rfoot{- \thepage{} -}					%フッターの右
+\renewcommand{\footrulewidth}{0.4pt}	%罫線の設定　0.0ptで罫線なし
+
+\begin{document}		%文書の開始
+\maketitle			%表題の出力
+
+\tableofcontents    	%目次の出力
+
+\pagebreak
+
+\part{部の題名}
+\section{節の題名}
+	本文本文
+
+\subsection{項の題名}
+	本文本文
+
+\subsection{項の題名}
+	本文本文
+
+\section{箇条の書き方}
+\subsection{単純箇条}
+	\begin{itemize}		%単純箇条
+		\item 箇条１
+		\item 箇条２
+		\item 箇条３
+	\end{itemize}
+
+\subsection{列挙型箇条}
+	\begin{enumerate}		%列挙型箇条
+		\item 箇条１
+		\item 箇条２
+		\item 箇条３
+	\end{enumerate}
+
+\subsection{見出し付箇条}
+	\begin{description}		%見出し付箇条
+		\item[項目A] 説明文
+		\item[項目B] 説明文
+		\item[項目C] 説明文
+	\end{description}
+
+%eclclass.sty
+\section{木構造}
+	\begin{classify}{親}		%木構造
+		\class{子１}
+		\class{
+			\begin{classify}{子２}
+				\class{孫１}
+				\class{孫２}
+			\end{classify}
+		}
+		\class{子３}
+	\end{classify}
+
+\section{囲み}
+
+%eclbkbox.sty
+\subsection{罫線で囲む}
+	\begin{breakbox}
+		囲みたい文囲みたい文\fbox{囲みたい文}囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文囲みたい文\\
+		(\parbox[c]{7.5zw}{\setlength{\baselineskip}{1pt}{\tiny 囲みたい文囲みたい文囲みたい文 \\ 囲みたい文囲みたい文囲みたい文}})
+	\end{breakbox}
+
+%ascmac.sty
+\subsection{網掛け}
+	\verb|\mask|コマンド
+	\begin{itemize}
+		\item \mask{網掛けA}{A}
+		\item \mask{網掛けB}{B}
+		\item \mask{網掛けC}{C}
+		\item \mask{網掛けD}{D}
+		\item \mask{網掛けE}{E}
+		\item \mask{網掛けF}{F}
+		\item \mask{網掛けG}{G}
+		\item \mask{網掛けH}{H}
+		\item \mask{網掛けI}{I}
+		\item \mask{網掛けJ}{J}
+		\item \mask{網掛けK}{K}
+	\end{itemize}
+	\verb|\maskbox|コマンド\\
+	\maskbox{.5\linewidth}{1.5cm}{K}{c}{文字の網掛け}\\
+	\verb|\Maskbox|コマンド\\
+	\Maskbox{.5\linewidth}{1.5cm}{D}{c}{.5pt}{文字の網掛け}\\
+	
+\pagebreak
+
+\section{文章の編集}
+\subsection{特殊文字}
+	一部例です
+	\begin{itemize}
+		\item \% \# \{ \} 		%\を前に入れると表示される
+		\item \textgreater		%＞の表示
+		\item \textless		%＜の表示
+		\item \textbackslash	%＼の表示
+		\item \textcircled{\scriptsize 秘}	%丸囲み文字
+		%ascmac.sty
+		\item \keytop{Q}		%キートップの表示
+		\item \return			%リターン小
+		\item \Return		%リターン大
+		\item \yen			%円マーク
+	\end{itemize}
+	\begin{verbatim}
+		\\ % *.tex　			%中のテキストをそのまま表示する
+	\end{verbatim}
+	文章中では\verb|\Latex{}|とも書けます。
+	
+\subsection{書体}
+	文章の中で{\gtfamily ワンポイント}を付ける際に\textgt{ゴシック体}を用いることもできます。付け方は{\gt ３種類}あります。\\
+	英字のフォントも変えることができます。\\
+	\begin{itemize}
+		\item \textrm{Roman}		%ローマン
+		\item \texttt{Typewriter}	%タイプライター
+		\item \textsf{San serif}		%サンセリフ
+		\item \textbf{Bold}			%ボールド
+		\item \textsl{Slanted}		%スラント
+		\item \textit{Italic}			%イタリック
+		\item \textsc{Small caps}	%スモールキャピタル
+	\end{itemize}
+	コマンドの\verb|\text|をなくして\verb|{\rm Roman}|とも書ける
+
+\subsection{改行}
+	文章の改行にはいくつかの種類があります。\newline
+	エディタのほうで見るとわかりますがすでに改行のコマンドを使用している個所があります。\\
+	ただ改行するだけではなく改行の幅も変えることができます。\\[5pt]
+	改ページもできます。
+	\pagebreak
+		
+\subsection{文字の大きさ}
+	\begin{itemize}
+		\tiny		\item 最小のおおきさ\\
+		\scriptsize 	\item さらにちいさい\\
+		\footnotesize \item ややちいさい\\
+		\small 		\item ちいさい\\
+		\normalsize 	\item 標準の大きさ\\
+		\large 		\item おおきい\\
+		\Large 		\item ややおおきい\\
+		\LARGE 		\item さらにおおきい\\
+		\huge 		\item さらにさらにおおきい\\
+		\Huge 		\item 最大のおおきさ\\
+		\normalsize {\small \{\}で囲んでも使用できます}
+	\end{itemize}
+	
+\subsection{インデント}
+	節を作り文章を書き始めると文頭が自動的にインデントされます。\\
+	しかしインデントを強制的にすることも可能です。\\
+	\indent インデントします。
+	
+	空白行を作ることで自動的に改段落することもできます。\\
+	文章を書くときに空白行を作るのは自然な流れでしょう。
+	\par 強制的に改段落もできます。\\
+	これは行数を抑えることができますが、詰まって見えるので編集づらいように感じます。
+	
+	\noindent エディタ内で空白行を作りたいけど改段落はしたくないときにはインデントしないようにしましょう。\\
+	因みにテキスト幅を均等にすることもできます。\linebreak
+	
+%plext.sty
+\subsection{強調表現}
+	\emph{例〜sample〜}\\
+	文章の中で\underline{下線を引いたり}、\bou{点を表示をする}こともできます。
+	
+\subsection{文字寄せ}
+	\noindent 通常位置
+	\begin{center}
+		センタリング
+	\end{center}
+	\begin{flushright}
+		右寄せ
+	\end{flushright}
+	\begin{flushleft}
+		左寄せ
+	\end{flushleft}
+
+%moreverb.sty
+\section{行番号}
+	\begin{itemize}
+		\item 標準的な表示
+			\listinginput{1}{sample.c}			%ファイルを読み込んで行番号の表示
+		\item 3ずつ表示する
+			\listinginput[3]{1}{sample.c}		%行番号の刻みを設定
+		\item タブ幅の変更
+			\verbatimtabinput[4]{sample.c}	%タブ幅を設定
+	\end{itemize}
+	
+\section{引用}
+\subsection{文の引用}
+	\emph{quote環境の例}\\
+	以下の文章は、芥川龍之介の『蜘蛛の糸』の冒頭部分です。quote環境を使用して引用しています。\\
+	段落部分を字下げしません。
+	\begin{quote}
+		ある日の事でございます。御釈迦様おしゃかさまは極楽の蓮池はすいけのふちを、独りでぶらぶら御歩きになっていらっしゃいました。池の中に咲いている蓮はすの花は、みんな玉のようにまっ白で、そのまん中にある金色きんいろの蕊ずいからは、何とも云えない好よい匂においが、絶間たえまなくあたりへ溢あふれて居ります。極楽は丁度朝なのでございましょう。
+	\end{quote}
+	\emph{quotation環境の例}\\
+	以下の文章は、芥川龍之介の『蜘蛛の糸』の冒頭部分です。quotation環境を使用して引用しています。\\
+	段落部分を字下げします。	
+	\begin{quotation}
+		ある日の事でございます。御釈迦様おしゃかさまは極楽の蓮池はすいけのふちを、独りでぶらぶら御歩きになっていらっしゃいました。池の中に咲いている蓮はすの花は、みんな玉のようにまっ白で、そのまん中にある金色きんいろの蕊ずいからは、何とも云えない好よい匂においが、絶間たえまなくあたりへ溢あふれて居ります。極楽は丁度朝なのでございましょう。
+	\end{quotation}
+
+\subsection{注釈}
+	専門用語等を使用する場合にちょっとした注釈をつける事があります。たとえばUSB\footnote{Universal Serial Bus}のように欄外に注釈を表示することができます。
+	
+\subsection{参考文献}
+	参考文献は巻末に記述するのが普通ですが、ここではサンプルのため文中に表示しています。\\
+	「今日よく用いられる特徴点抽出法には，ハリスのコーナー検出\cite{harris}やSUSAN (Smallest Univalue Segment Assimilating Nucleus)\cite{susan} がある。」
+
+	\begin{thebibliography}{9}
+		\bibitem{harris} C. Harris and M. Stephens,
+			``A combined corner and edge detector, '' Proc. 4th Alvey Vision Conf.,
+			pp.147-151, Manchester, U.K., Aug. 1988.
+		\bibitem{susan} S. M. Smith and J. M. Brady,
+			``SUSAN|A new approach to low level image processing,'' Int. J. Comput.
+			Vis., vol.23, no.1, pp.45-78, May 1997.
+	\end{thebibliography}
+	
+\pagebreak
+
+\section{表(+キャプション)}
+\subsection{並べて表示}
+	\begin{tabular}{lcr}		%ｌ..左寄せ　c...センタリング　r...右寄せ
+		氏名 & 学籍番号& 予算\\
+		田中　太郎 & 1132AAA & 8,000\\
+		御手洗　花子 & 1132BBB & 12,000\\
+		佐藤　吉美 & 1132CCC & 10,000\\
+		立川　三次郎 & 1132DDD & 5,000\\
+	\end{tabular}
+	
+\subsection{罫線有の表}
+	キャプションの番号を参照する場合は表\ref{tab:campus}や表\ref{bbbbbbbbbb}とする。
+	\begin{table}[h]				%領域の指定
+	\begin{center}
+		\caption{学科説明}		%キャプションの設定
+	\begin{tabular}{|r|c||p{20zw}|}		%カラムの幅を指定することで文の折り返しが可能
+		\hline 					%横罫線
+		学部 & 学科 & 説明\\
+		\hline \hline
+		工学部 & 未来ロボティクス学科 & ロボットに関する基本的な原理の理解を通じて、人間の生活における利便性を向上させ、将来、ロボティクスのさらなる新しい領域を開拓していくこともできる専門的素養を持った技術者を育てます。\\
+		\hline
+		情報科学部 & 情報工学科 & 私たちに身近なコンピュータや携帯電話、ICカードなどはすべて情報工学の成果です。これらを単なるユーザとして享受するのではなく、自ら分析・考案・設計・製作できる創造的人材を本学科は育成しています。\\
+		\cline{2-3}				%指定のカラムに罫線表示　この場合は2〜3カラムにかけて
+		 & 情報ネットワーク学科 & 次世代の情報ネットワーク社会の創造に向けて必要となる研究者やITエンジニアを育成するために設置された未来志向の学科です。\\
+		 \hline
+	\end{tabular}
+	\label{tab:campus}					%キャプションにラベルを付ける
+	\end{center}
+	\end{table}
+
+%array.sty
+\subsection{特殊罫線}
+	\begin{table}[h]
+	\begin{center}
+		\caption{個別予算}
+	\begin{tabular}{|m{4zw}!{\vrule width 2pt}m{3cm}!{⇒}>{$}r<{$}|}	%罫線の代わりに記号を表示
+		\hline
+		学籍番号 & 氏名 & 予算\\
+		\hline \hline
+		1132AAA & 田中　太郎 & 8,000\\
+		\hline
+		1132BBB & 御手洗　花子 & 12,000\\
+		\hline
+		1132CCC & 佐藤　吉美 & 10,000\\
+		\hline
+		1132DDD & 立川　三次郎 & 5,000\\
+		\hline
+	\end{tabular}
+	\label{bbbbbbbbbb}				%ラベルは何でもよい
+	\end{center}
+	\end{table}
+	
+\pagebreak
+
+%graphicx.sty
+\section{画像}
+	LATEXで画像を表示する場合、印刷時の解像度の関係で拡張子が「.eps」のものを使用するのが一般的です。\\
+	eps画像は{\bf Illustrator}や{\bf Inkscape}で作ることができます。	ネット上に変換サービスも多数あるので好きなものを使用してください。
+		
+\subsection{EPS画像の表示}
+	図\ref{fig:chiba1}はwidth、図\ref{fig:chiba2}はscaleで横幅を指定している。\\
+	図\ref{fig:chiba3}は画像の一部を表示している。
+	%その他のオプションについては各自お願いします
+	\begin{figure}[h]									%領域の指定
+	\begin{minipage}[b]{.22\linewidth}						%小さな領域の確保
+		\includegraphics[width=3cm]{image/chibani.eps}		%画像の表示
+		\caption{チバニー.eps[width]}
+		\label{fig:chiba1}
+	\end{minipage}
+	\hspace{5mm}										%指定された長さのスペースを出力
+	\begin{minipage}[b]{.22\linewidth}
+		\includegraphics[scale=0.12]{image/chibani.eps}
+		\caption{チバニー.eps[scale]}
+		\label{fig:chiba2}
+	\end{minipage}
+	\hspace{5mm}
+	\begin{minipage}[b]{.22\linewidth}
+		\includegraphics[scale=0.3, trim=200 450 200 0, clip]{image/chibani.eps}
+		\caption{チバニー.eps[clip]}
+		\label{fig:chiba3}
+	\end{minipage}
+	\end{figure}
+	
+\subsection{PNG,JPG画像の表示}
+	推奨ではありませんが、前述したEPS画像を用いなくても一般的に使用されている拡張子の画像も使用することができます。
+	しかしただ貼り付けるだけではエラーが発生するため、手順を示します。
+	\begin{enumerate}
+		\item 表示したい画像ファイルのある場所でコマンドプロンプトを起動します。
+		\item 「ebb ファイル名.jpg/png」とコマンドを打ちます。LATEXをインストーラでインストールした場合できるはずです。
+		\item フォルダ内に「ファイル名.bb」というファイルができます。
+	\end{enumerate}
+	以上の手順で画像が表示できるようになるはずです。複数画像がある場合はすべて.bbのファイルを作ってあげてください。ファイル名が同じで、拡張子だけが違う場合は一つで大丈夫です。\\
+	パッケージのオプション設定も必要ですがこのサンプルのおまじないをコピーすれば大丈夫です。
+	
+	\begin{figure}[h]
+	\begin{minipage}[b]{.22\linewidth}
+		\includegraphics[width=3cm]{image/chibani.png}
+		\caption{チバニー.png}
+	\end{minipage}
+	\hspace{5mm}
+	\begin{minipage}[b]{.22\linewidth}
+		\includegraphics[width=3cm]{image/chibani.jpg}
+		\caption{チバニー.jpg}
+	\end{minipage}
+	\end{figure}
+
+\pagebreak
+
+\section{数式}
+\subsection{添え字・肩文字}
+	\begin{itemize}
+		\item 肩文字
+	\[											%数式モード初め
+	A^1,A^2,\dots A^n \qquad y = e^{x^2+x+1}			%^を使用することで肩文字
+	\]											%数式モード初め
+		\item 添え字
+	\[
+	A_1,A_2,\dots A_n \qquad y = A_{i,j} + A_{i,k} + A_{i,l}	%_を使用することで添え字
+	\]
+	\end{itemize}
+	応用として「${}^i_jA$」という記述もできます。
+	
+\subsection{分数}
+	分数は$\frac{分子}{分母}$と書きます。
+	\[
+	\frac{a+b}{c+\frac{d}{e}+\frac{f}{\frac{g+h+i}{j+k}}}
+	\]
+	フォントのサイズはこのように自動で調整されます。
+	
+\subsection{平方根}
+	\[
+	a = \sqrt{x^2+y^2}
+	\]
+	\[
+	b = \sqrt[3]{x+y+z} + \frac{\sqrt{2}}{6}
+	\]
+	
+\end{document}		%文書の終了

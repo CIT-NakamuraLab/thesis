@@ -1,0 +1,44 @@
+\chapter{論文内の参照}
+\label{chp:reference}
+
+\section{脚注}
+\label{sec:reference_ftnote}
+	文章中に脚注を使用したい場合はfootnoteコマンドを使用します．「\verb|\footnote[番号]{内容}|」のように記述します\footnote[99]{脚注表示例．}．番号を省略した場合には自動で番号が振られます\footnote{番号省略例}．
+
+\section{引用}
+\label{sec:reference_quote}
+	文献等の引用を行う場合には，quote環境またはquotation環境を使用します．\\
+	|quote表示例|
+	\begin{quote}
+		quoteは短文の引用に用いられます．
+
+		quoteは段落の先頭字下げを行いません．
+	\end{quote}
+	|quotation表示例|
+	\begin{quotation}
+		quotationは長文の引用に用いられます．quotationは段落の先頭字下げを行います．
+
+		quote環境とquotation環境では環境外の文章から一段下がって表示されています．
+	\end{quotation}
+
+\section{参考文献}
+\label{sec:reference_bib}
+	参考文献があることを示したい場合はciteコマンドを使用します．「\verb|\cite{参考文献}|」のように記述します\cite{Webデザイン}．
+
+	参考文献一覧は巻末に記載しています．citeコマンドの引数にはthebibliography環境内のbibitemコマンドに記載した名前を使用することで，番号が表示されます．thebibliography環境の引数は参考文献の最大数で，配列を宣言する場合と同じ考えです．特に理由がなければ99のままでよいでしょう．
+
+\section{章節番号・図表番号}
+\label{sec:reference_chapter}
+	章節や図表の番号を参照する場合にはlabelコマンドとrefコマンドを使用します．事前に章節等を記述している部分にlabelコマンドで名前をつけ，呼び出す際にその名前をrefコマンドで使用することで番号を表示することができます．
+
+	呼び出すことのできるのは番号のみのため，前後に言葉を補う必要があります．\\
+	|記述例|
+	\begin{verbatim}
+		\chapter{論文内の参照}
+		\label{chp:reference}
+
+		この部分については第\ref{chp:reference}章を参照してください．
+	\end{verbatim}
+	|表示例|\
+		この部分については第\ref{chp:tex_basic}章(第２章の参照名を確認）参照してください．
+	

@@ -1,0 +1,62 @@
+\chapter{Texの書き方(基本編)}
+\label {chp:tex_basic}
+
+\section{章，節の書き方}
+\label{sec:tex_basic_section}
+\subsection{基本}
+\label{sub:tex_basic_section_basic}
+    文章を書く際に使用する書式です．\\
+    章節は目次に表示されます．\\
+    |記述例|
+    \begin{verbatim}
+    \chapter{章の名前}
+    \section{節の名前}
+    \subsection{小節の名前}
+    \end{verbatim}
+
+\section{改行，コメントアウト}
+\label{sec:tex_basic_newline}
+    改行は\verb|\\|というように，バックスラッシュ(円マーク)を続けて二つ記述します．\\
+    \%を書くと以降がコメントアウトされます．
+
+    エディタ上で一行空白をあけて記述することで，新たな文節として認識されます．
+
+\section{環境とコマンド}
+\label{sec:tex_basic_envcmd}
+    Latexには「環境」と「コマンド」があります．
+    環境は複数行にまたがるもので，コマンドは一行のみ有効なものです．
+\subsection{環境}
+\label{sub:tex_basic_section_envcmd_env}
+    環境を使用するときは\verb|\begin{環境名}と\end{環境名}|で囲みます．\\
+    画像を表示，表を作成，箇条書き等さまざまな場面で使用します．
+\subsection{コマンド}
+\label{sub:tex_basic_section_envcmd_cmd}
+    コマンドは\verb|\newpage|のように先頭に\verb|\|をつけた単語を記述します．\\
+    環境と同様にさまざまな種類があります．
+
+\section{エスケープ}
+\label{sec:tex_basic_escape}
+    \# \$ \& \% \{ \}  \\
+    などがエスケープの必要な文字です．直前に\verb|\|をつけるとエスケープされます．\\
+    文章全体をエスケープする場合は「verbatim」環境を使用します．
+     
+\section{箇条書き}
+\label{sec:tex_basic_clause}
+    箇条書きを行う場合にはitemize環境を使用します．\\
+    改行を入れることで題目と説明のように表示することが可能です．\\
+    |記述例|\\
+    \verb|\begin{itemize}|\\
+        \verb|\item| あいてむ１\\
+        \verb|\item| あいてむ２\\\\
+        あいてむ２について\\
+    \verb|\end{itemize}|\\\\
+    |表示例|
+\begin{itemize}
+    \item あいてむ１
+    \item あいてむ２
+
+    あいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２についてあいてむ２について
+\end{itemize} 
+
+    箇条書きには複数種類があります．\\
+    itemize環境の場合は通常の「・」，enumerate環境の場合は「1.」のように数字列挙に，description環境の場合は「\verb|\item[項目A] 説明文|」と書くことで項目つきの箇条になります．

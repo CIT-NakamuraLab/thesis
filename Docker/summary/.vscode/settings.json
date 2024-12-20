@@ -1,0 +1,21 @@
+{
+  "latex-workshop.view.pdf.viewer": "tab",
+      "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args":[
+              "-halt-on-error",
+              "-synctex=1",
+              "%DOCFILE%"
+            ]
+          }
+      ],
+      "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex",
+            "tools": ["lualatex"]
+          }
+      ],
+      "latex-workshop.latex.autoClean.run": "onFailed",
+}

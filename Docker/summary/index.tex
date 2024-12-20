@@ -1,0 +1,58 @@
+\documentclass[twocolumn]{ltjsarticle}
+
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{here}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+
+
+\makeatletter
+\def\firstpage{\vspace{-10mm}千葉工業大学情報科学部情報ネットワーク学科\\2022年度卒業研究中間審査報告書}
+\def\ps@titlepage{%
+   \@oddhead{\firstpage\hfil}%
+   \let\@evenhead\@oddhead
+   \def\@oddfoot{\hfil}%
+   \let\@evenfoot\@oddfoot
+   \let\@mkboth\@gobbletwo}
+\makeatother
+\title{\vspace{-20mm}卒論報告書テンプレート\\サブタイトル\vspace{-5mm}}
+\author{学番 中村　直人\\ \small{指導教員：中村　直人}}
+\date{}
+\begin{document}
+\maketitle
+\thispagestyle{titlepage}
+
+\section*{1　はじめに}
+ 一般に，テレビ放送などの動画は，その内容を画一的に閲覧できるのみである．一方，Webに代表されるハイパーメディアは，ユーザが選択的に情報を得ることができる．
+ そこで，動画像の特徴を活かして更にリンク構造を付加したハイブリットメディアが提案されてきている．
+ 具体的なリンクの実現手法として，本研究では，電子透かしを用いることとした．この方法では，カメラ付きデバイスでリンクを読み取るので，多彩なリンク先を設定することが可能である．
+そこで，本研究では，AzureのWeb App Botを利用し研究室紹介チャットボットの製作を行うことを目的とする．
+\section*{2　システムの概要}
+　本研究では，インターフェースとしてLINEを用いる.個々の会話はLINEからWebhookによりAzure上のWebサービスに接続する. 
+更に接続されたwedサービスはMicroSoft社の自然言語処理サービスLUISを用いて質問文の解析と、応答文の作成を行う．
+その結果は、JSON形式によりLINEのインターフェースに戻される．その構成を図\ref{fig:logic}に示す．
+\vspace{0mm}
+
+\section*{3　現在の進捗状況}
+\subsection*{(1)スタンプラリー}
+　Webリンク機能を有するアプリケーション作成した．今回の実験ではコンテンツとして学科紹介のビデオを視聴させ，電子透かしでそのビデオに対応した問題のWebページにリンクし，全ての箇所での結果がデータベースに保存した．結果として，来場者のうち152名が利用し好評な結果を得た．また，データベースに保存されたアクセスログにより，来場者の経路の分析など新たな成果が得られた
+\subsection*{(2)環境利用コンテンツ}
+Webリンク機能とアプリケーションを有するシステムである．たとえば，飼育のシーンで電子透かしをかざせば，いろいろな餌を与えられるなどゲーム感覚でシミュレーションを行えるアプリケーションを作成する．
+御宿町と協力して「ミヤコタナゴ」について，コンテンツの作成などを進めている．その実証実験風景を図\ref{fig:logic2}に示す．
+
+\vspace{-5mm}
+\section*{4　今後の計画}
+本研究では，動画像をアンカーとしてウェブページやアプリケーションにリンクするタブレットアプリケーションの開発を行う\cite{ラベル名}．
+また， 本システムに対応した教育用ビデオコンテンツを作成し，本システムの有効性を検証する予定である．
+
+\begin{thebibliography}{99}
+  \bibitem{ラベル名} 太宰治、『走れメロス』、新潮（1940年5月号）
+  \bibitem{chikuma} 太宰治、太宰治全集3（ちくま文庫）、筑摩書房(1988).
+  \bibitem{schiller} Friedrich von Schiller, バラード¥textit{de:Die B¥"{u}rgschaft}, 1815.
+\end{thebibliography}
+
+\end{document}
+

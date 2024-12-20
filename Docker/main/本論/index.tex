@@ -1,0 +1,103 @@
+%%%%%%%初期設定　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{ltjsreport}%LuaLaTeX対応
+\renewcommand{\bibname}{参考文献} 
+\usepackage{graphicx, ascmac, url, array, ./style/eclbkbox}
+
+\setlength{\textheight}{25cm}		%1ページ当りの行数を指定する
+\setlength{\textwidth}{38\zw}		%1行あたりの文字数の設定
+\setlength{\evensidemargin}{10mm}   %偶数ページの余白
+\setlength{\oddsidemargin}{10mm}    %奇数ページの余白
+\setlength{\topmargin}{-3mm}        %上の余白
+\setlength{\headheight}{0mm}        %ヘッダ領域の高さ
+
+
+\setlength{\headsep}{0mm}           %ヘッダ領域と本文領域との間隔
+\setlength{\columnsep}{12mm}        %段組にした場合の段同士の間隔
+\setlength{\footskip}{10mm}         %フッタ領域と本文との間隔
+
+%%%%%%%初期設定　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%コンテンツ　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%表紙環境　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+    \begin{center}
+        \vspace*{50truept}
+        {\Huge 千葉工業大学}\\
+        \vspace{20truept}
+%      {\Huge 修士学位論文}\\
+        {\Huge 卒業論文}\\
+        \vspace{180truept}
+        {\Huge　 {\LaTeX} 論文サンプル} \\       
+        \vspace{30truept}
+        {\Large ２０２３年３月}\\
+        \vspace{160truept}
+%       {\Large 所属先行：情報科学専攻}\\
+        {\Large 所属学科：情報ネットワーク学科}\\
+        \vspace{10truept}
+        {\Large 学生番号・氏名：1932000番}\\
+        \vspace{10truept}
+        {\Large 工大　一郎}\\
+        \vspace{30truept}
+        {\Large 指導教員：中村　直人　教授}
+    \end{center}
+\end{titlepage}
+%%%%%%%表紙環境　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+\tableofcontents                 	%目次を作成
+\listoffigures			%図の目次作成
+\listoftables				%表の目次作成
+\baselineskip 20pt               	%行間設定
+\clearpage
+\pagenumbering{arabic}
+
+%%%%%%%本文　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%別ファイルを読み込み
+%\input{ディレクトリ名/ファイル名}
+%http://www.latex-cmd.com/
+\input{./chapter/chapter_1}
+
+\input{./chapter/chapter_2}
+
+\input{./chapter/chapter_3}
+
+\input{./chapter/chapter_4}
+
+\newpage
+
+%%%%%%%本文　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%謝辞　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{　\\謝辞}\addcontentsline{toc}{chapter}{謝辞}
+|記述例|
+
+本研究に関しまして，熱心かつ丁寧にご指導いただきました，
+千葉工業大学情報科学研究科情報科学専攻中村直人教授に心から御礼申し上げます．
+また，修士論文発表における，副査を務めていただきました浮貝雅裕教授，須田宇宙准教授に深謝いたします．
+そして，中村研究室博士前期課程，学部生の皆様，および，卒業された博士前期課程，学部生の皆様に心から御礼申し上げます．
+皆様のおかげで，これまでの研究生活を充実かつ楽しく送ることが出来ました．
+そして，これまで支えてくれた両親をはじめとする親族各位に改めて御礼申し上げます．
+ありがとうございました．
+
+%%%%%%%謝辞　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%参考文献　start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+
+\bibitem{Webデザイン}
+Webデザイン編集委員会，“Webデザイン-コンセプトメイキングから運用まで-　改訂版”，CG-ARTS協会(2013)．
+
+\bibitem{数値計算法}
+三井田惇郎/須田宇宙，“数値計算法　第2版”，森北出版株式会社(2013)．
+
+
+\end{thebibliography}
+%%%%%%%参考文献　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+%%%%%%%コンテンツ　end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

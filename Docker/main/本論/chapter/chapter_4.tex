@@ -1,0 +1,70 @@
+\chapter{Texの書き方(応用編)}
+\label{chp:tex_pro}
+
+\section{応用コマンド・環境}
+\label{sec:tex_pro_cmd}
+\subsection{newcolumntypeコマンド}
+\label{sub:tex_pro_cmd_newcol}
+	表のカラムの書式を新規に割り当てることのできるコマンドです。表を作成する前に当コマンドで新しい書式を作成することで使用することが可能です。\\
+	「\verb|\newcolumntype{書式名}{書式}|」のように記述することで書式を作成することができます。
+幅が5cmで中央ぞろえのカラムを作成する場合には\\「\verb|>{\centering\arraybackslash}p{5cm}|」を書式に記載します。
+
+\subsection{breakbox環境}
+\label{sub:tex_pro_cmd_break}
+	枠で囲まれた文章を作成することができます。図を囲むscreen環境と違い、ページをまたいだ枠を作ることができます。ソースコードを載せる場合等に使用するとよいでしょう。\\
+	|表示例|
+\begin{breakbox}
+\noindent breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。breakbox環境内の文章です。
+\end{breakbox}
+
+\section{マクロ}
+\label{sec:tex_pro_macro}
+	Latexのマクロはコマンドと環境の両方を作成することが可能です。
+
+\subsection{コマンドマクロ}
+\label{sub:tex_pro_macro_cmd}
+	コマンドのマクロは「\verb|\newcommand{コマンド名}{内容}|」のように記述することで作成することができます。引数を指定することもでき、「\verb|\newcommand{コマンド名}[引数の数]{（#1）内容}|」のように記述します。\\
+	|記述例|
+	\begin{verbatim}
+		\newcommand{\hoge}[2]{#1 は #2 である}
+		作成したコマンドを使用する場合は「\hoge{我輩}{猫}」のように記述します。
+	\end{verbatim}
+	|表示例|\\
+	\newcommand{\hoge}[2]{#1 は #2 である}
+	作成したコマンドを使用する場合は「\hoge{我輩}{猫}」のように記述します。
+
+\subsection{環境マクロ}
+\label{sub:tex_pro_macro_env}
+    環境のマクロは「\verb|\newenvironment{環境}[引数の数]{はじめ}{おわり}|」のように記述することで作成することができます。コマンドと同じく引数を指定できます。\\
+	|記述例|
+	\begin{verbatim}
+	\newenvironment{fig}{
+	    \begin{figure}[!h]
+	    \begin{screen}
+	    \begin{center}
+	}{
+	    \end{center}
+	    \end{screen}
+	    \end{figure}
+	}
+	\begin{fig}
+	    \includegraphics[scale=0.4, clip]{./img/apple.png}
+	    \caption{図の名前}
+	    \label{fig:図の名前}
+	\end{fig}
+	\end{verbatim}
+	|表示例|
+	\newenvironment{fig}{
+	    \begin{figure}[!h]
+	    \begin{screen}
+	    \begin{center}
+	}{
+	    \end{center}
+	    \end{screen}
+	    \end{figure}
+	}
+	\begin{fig}
+	    \includegraphics[scale=0.4, clip]{./img/apple.png}
+	    \caption{図の名前}
+	    \label{fig:図の名前}
+	\end{fig}

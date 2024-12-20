@@ -1,0 +1,8 @@
+services:
+  lualatex:
+    build: .
+    container_name: lua_test
+    volumes:
+      - ./main:/root/main
+      - ./summary:/root/summary
+    tty: true

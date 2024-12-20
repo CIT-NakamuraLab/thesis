@@ -16,5 +16,4 @@ https://github.com/CIT-NakamuraLab/thesis/tree/main/Windows にまとめてあ�
 知らん、自分でやれ
 
 ### Docker
-
-誰かが作ってくれることを祈ります。
+https://github.com/CIT-NakamuraLab/thesis/tree/main/Docker/README.md にまとめました。
