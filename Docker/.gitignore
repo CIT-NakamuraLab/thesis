@@ -1,0 +1,7 @@
+.profile
+.gitconfig
+.bashrc
+.vscode-server
+.ssh
+.texlive2021
+*gz
