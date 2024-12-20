@@ -51,6 +51,7 @@
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.latex.clean.subfolder.enabled": true,
     "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.docker.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab"
